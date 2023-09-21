@@ -9,11 +9,11 @@ function titleCase(str) {
 }
 
 function checkName() {
-    usrName = localStorage.getItem("name");
-    if (usrName === "") {
+    usrName = localStorage.getItem('name');
+    if (usrName === '') {
         return;
     }
-    window.location.href('to-do.html')
+    window.location.href = 'to-do.html';
 }
 
 // takes the name and assigns it to a cookie
