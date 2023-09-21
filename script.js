@@ -16,9 +16,7 @@ function titleCase(str) {
 function checkName() {
     usrName = localStorage.getItem('name');
     localStorage.removeItem('placeholder');
-    if (usrName === null) {
-        return;
-    } else {
+    if (usrName != null) {
         window.location.href = 'to-do.html';
     }
     console.log(usrName);
