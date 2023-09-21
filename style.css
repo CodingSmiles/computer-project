@@ -68,7 +68,14 @@ button {
     padding: 10px;
     background-color: lightblue;
     border-radius: 5px;
+    overflow-x: scroll;
 }
+
+.item::-webkit-scrollbar {
+    display: none;
+  }
+
+
 
 .item .delete-btn {
     margin-top: auto;
@@ -84,7 +91,6 @@ button {
 
 .item .tick-btn {
     margin-top: auto;
-
     font-family: 'Inter';
     background-color: green;
     color: white;
@@ -97,4 +103,39 @@ button {
 .task-done {
     text-decoration: line-through;
     background-color: grey;
+}
+
+span {
+    font-size: 3ch;
+}
+
+
+/* This media query ensures that the website is good on all platforms */
+@media (max-width: 768px) {
+    body {
+        font-size: 45%;
+    }
+
+    input,
+    button {
+        font-size: 3ch;
+    }
+
+    button {
+        margin-top: 6%;
+    }
+
+    .container {
+        max-width: 75%;
+    }
+
+
+    .container .name {
+        text-align: center;
+    }
+
+    .container .name input {
+        margin: 0 auto;
+        display: block;
+    }
 }
