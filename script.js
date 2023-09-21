@@ -8,9 +8,10 @@ function titleCase(str) {
     return str.join(' ');
 }
 
+// Checks if a name has already been recorded in the cookies
 function checkName() {
     usrName = localStorage.getItem('name');
-    if (usrName === '') {
+    if (usrName === null) {
         return;
     }
     window.location.href = 'to-do.html';
