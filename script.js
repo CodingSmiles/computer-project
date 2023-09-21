@@ -19,7 +19,6 @@ function checkName() {
     if (usrName != null) {
         window.location.href = 'to-do.html';
     }
-    console.log(usrName);
 }
 
 // takes the name and assigns it to a cookie
@@ -38,8 +37,6 @@ function setName() {
     localStorage.setItem("placeholder", `${titleCase("an unnamed guy")}`);
     let usrName = localStorage.getItem('name');
     let placeholder = localStorage.getItem('placeholder');
-    console.log(placeholder);
-    console.log(usrName);
     if (usrName !== null) {
         document.getElementById('mTitle').textContent = `To-Do List for ${usrName}`;
     } else {
