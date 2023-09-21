@@ -1,9 +1,3 @@
-// Global variables for the entire website
-let usrName = '';
-
-
-
-
 // this function will make the input parameters into a title case string.
 // eg. "aadiraj anil" to "Aadiraj Anil"
 function titleCase(str) {
@@ -16,10 +10,24 @@ function titleCase(str) {
 
 
 // takes the name and assigns it to a previously made global variable
-function nextPage() {
-    usrName = titleCase(document.getElementById('name').value.trim());
-    
+function goToNextPage() {
+
+    let usrName = titleCase(document.getElementById('name').value.trim());
+    if (usrName === '') {
+        localStorage.setItem("name", `${titleCase("an unnamed guy")}`);
+        return;
+    }
+    localStorage.setItem("name", usrName);
 }
+
+
+// takes the name from cookies and changes the title accordingly
+function setName() {
+    let usrName = localStorage.getItem('name');
+    document.getElementById('mTitle').textContent = `To-Do List for ${usrName}`;
+}
+
+
 
 function addTask() {
     const taskText = document.getElementById("input").value.trim();

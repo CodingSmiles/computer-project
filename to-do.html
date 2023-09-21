@@ -11,9 +11,9 @@
     <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 
-<body>
+<body onload="setName()">
     <div class="container">
-        <h1>To-Do List</h1>
+        <h1 id='mTitle'></h1>
         <input type="text" id="input" placeholder="Add a new task">
         <br>
         <button onclick="addTask()" class="addbutton">Add</button>
