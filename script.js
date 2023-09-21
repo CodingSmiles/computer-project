@@ -13,8 +13,10 @@ function checkName() {
     usrName = localStorage.getItem('name');
     if (usrName === null) {
         return;
+    } else {
+        window.location.href = 'to-do.html';
     }
-    window.location.href = 'to-do.html';
+    console.log(usrName);
 }
 
 // takes the name and assigns it to a cookie
