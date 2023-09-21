@@ -8,9 +8,14 @@ function titleCase(str) {
     return str.join(' ');
 }
 
-// Checks if a name has already been recorded in the cookies
+// Checks if a name has already been recorded in the cookies.
+// The code allows for a person to enter their name only once
+// The code allows for a person to leave the input blank
+// The code allows for a person to re-enter their name if they previously left it blank
+
 function checkName() {
     usrName = localStorage.getItem('name');
+    localStorage.removeItem('placeholder');
     if (usrName === null) {
         return;
     } else {
@@ -23,17 +28,26 @@ function checkName() {
 function goToNextPage() {
     let usrName = titleCase(document.getElementById('name').value.trim());
     if (usrName === '') {
-        localStorage.setItem("name", `${titleCase("an unnamed guy")}`);
         return;
+    } else {
+        localStorage.setItem("name", usrName);
     }
-    localStorage.setItem("name", usrName);
 }
 
 
 // takes the name from cookies and changes the title accordingly
 function setName() {
+    localStorage.setItem("placeholder", `${titleCase("an unnamed guy")}`);
     let usrName = localStorage.getItem('name');
-    document.getElementById('mTitle').textContent = `To-Do List for ${usrName}`;
+    let placeholder = localStorage.getItem('placeholder');
+    console.log(placeholder);
+    console.log(usrName);
+    if (usrName !== null) {
+        document.getElementById('mTitle').textContent = `To-Do List for ${usrName}`;
+    } else {
+        document.getElementById('mTitle').textContent = `To-Do List for ${placeholder}`
+    }
+
 }
 
 

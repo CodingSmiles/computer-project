@@ -2,7 +2,6 @@ body {
     font-family: Inter;
     overflow-x: hidden;
 }
-
 input {
     font-family: Inter;
     font-size: 2.6ch;
@@ -12,8 +11,6 @@ input {
     padding: 2.5%;
     padding-left: 3.2%;
 }
-
-
 button {
     font-family: Inter;
     font-size: 2.4ch;
@@ -27,20 +24,15 @@ button {
     border-radius: 1.4ch;
     border: none;
 }
-
-
-
 .container {
     text-align: center;
     max-width: 69%;
     margin: 0 auto;
 }
-
 .container .title {
     padding-top: 0.6%;
     padding-bottom: 0.6%;
 }
-
 .container .name {
     text-align: center;
     font-size: 2.6ch;
@@ -50,15 +42,12 @@ button {
     padding: 2.5%;
     padding-left: 0%;
 }
-
-
 .list {
     list-style: none;
     padding: 0;
     align-items: center;
     position: relative;
 }
-
 .item {
     font-family: 'Inter';
     display: flex;
@@ -66,76 +55,56 @@ button {
     align-items: center;
     margin: 10px 0;
     padding: 10px;
-    background-color: lightblue;
+    background-color: lightseagreen;
     border-radius: 5px;
     overflow-x: scroll;
 }
-
-.item::-webkit-scrollbar {
-    display: none;
-  }
-
-
-
 .item .delete-btn {
     margin-top: auto;
     font-family: 'Inter';
     background-color: red;
     color: white;
     border: none;
-    padding: 5px 10px;
+    padding: 1% 2%;
     border-radius: 3px;
     cursor: pointer;
     margin-left: 5px;
 }
-
 .item .tick-btn {
     margin-top: auto;
     font-family: 'Inter';
     background-color: green;
     color: white;
     border: none;
-    padding: 5px 10px;
+    padding: 1% 2%;
     border-radius: 3px;
     cursor: pointer;
 }
-
 .task-done {
-    text-decoration: line-through;
     background-color: grey;
 }
-
 span {
-    font-size: 3ch;
+    font-size: 169%;
 }
-
-
 /* This media query ensures that the website is good on all platforms */
 @media (max-width: 768px) {
     body {
         font-size: 45%;
-    }
-
-    input,
-    button {
+   }
+    input, button {
         font-size: 3ch;
-    }
-
+   }
     button {
         margin-top: 6%;
-    }
-
+   }
     .container {
         max-width: 75%;
-    }
-
-
+   }
     .container .name {
         text-align: center;
-    }
-
+   }
     .container .name input {
         margin: 0 auto;
         display: block;
-    }
+   }
 }
