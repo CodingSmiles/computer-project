@@ -1,37 +1,31 @@
 body {
     font-family: Inter;
-    font-size: medium;
-    background-color: g;
+    overflow-x: hidden;
 }
 
 input {
     font-family: Inter;
-    font-size: 2ch;
+    font-size: 2.6ch;
     width: 100%;
-    height: 4ch;
-    border-radius: 1.2ch;
-    padding: 3.5%;
+    height: 3.2ch;
+    border-radius: 0.8ch;
+    padding: 2.5%;
+    padding-left: 3.2%;
 }
 
-input .name {
-    text-align: center;
-    font-size: 2ch;
-}
 
 button {
     font-family: Inter;
-    font-size: medium;
-    border: 1%;
+    font-size: 2.4ch;
     background-color: green;
-    border: none;
     color: white;
-    padding: 15px 32px;
+    padding: 1.2% 4.5%;
     text-align: center;
     display: inline-block;
-    font-size: medium;
-    margin-top: 5%;
+    margin-top: 4.5%;
     cursor: pointer;
-    border-radius: 2ch;
+    border-radius: 1.4ch;
+    border: none;
 }
 
 
@@ -41,6 +35,22 @@ button {
     max-width: 69%;
     margin: 0 auto;
 }
+
+.container .title {
+    padding-top: 0.6%;
+    padding-bottom: 0.6%;
+}
+
+.container .name {
+    text-align: center;
+    font-size: 2ch;
+    font-size: 3ch;
+    width: 100%;
+    height: 4ch;
+    border-radius: 1.2ch;
+    padding: 3.5%;
+}
+
 
 .list {
     list-style: none;
