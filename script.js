@@ -8,10 +8,16 @@ function titleCase(str) {
     return str.join(' ');
 }
 
+function checkName() {
+    usrName = localStorage.getItem("name");
+    if (usrName === "") {
+        return;
+    }
+    window.location.href('to-do.html')
+}
 
-// takes the name and assigns it to a previously made global variable
+// takes the name and assigns it to a cookie
 function goToNextPage() {
-
     let usrName = titleCase(document.getElementById('name').value.trim());
     if (usrName === '') {
         localStorage.setItem("name", `${titleCase("an unnamed guy")}`);
@@ -28,11 +34,11 @@ function setName() {
 }
 
 
-
+// adds a task when the user press the add button
 function addTask() {
     const taskText = document.getElementById("input").value.trim();
     if (taskText === "") {
-        alert("Please enter a task!");
+        alert("Task cannot be empty");
         return;
     }
     const listItem = document.createElement("li");
@@ -45,12 +51,14 @@ function addTask() {
     document.getElementById('input').value = '';
 }
 
+// deletes a task upon the user's command
 function deleteTask(button) {
     const taskList = document.getElementById("taskList");
     const listItem = button.parentElement;
     taskList.removeChild(listItem);
 }
 
+// marks a task as completed
 function markAsDone(button) {
     const listItem = button.parentElement;
     listItem.classList.toggle("task-done");
