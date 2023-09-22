@@ -28,6 +28,10 @@ button {
     border: none;
 }
 
+span {
+    font-size: 169%;
+}
+
 
 .footer {
     padding-top: 20%;
@@ -112,9 +116,17 @@ button {
     background-color: grey;
 }
 
-span {
-    font-size: 169%;
+.item .btn-disable {
+    cursor: default;
+    background-color: grey;
 }
+
+
+.counter {
+    padding-top: 15%;
+}
+
+
 
 /* This media query ensures that the website is good on all platforms */
 @media (max-width: 768px) {

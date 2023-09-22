@@ -1,3 +1,8 @@
+// Global variables for this page
+var completedTask = [];
+
+
+
 // this function will make the input parameters into a title case string.
 // eg. "aadiraj anil" to "Aadiraj Anil"
 function titleCase(str) {
@@ -7,6 +12,14 @@ function titleCase(str) {
     }
     return str.join(' ');
 }
+
+// this function tests if the provided string starts with a number
+// "1abc" = true
+// "abc" = false
+function startsWithNumber(str) {
+    return /^\d/.test(str);
+  }
+
 
 // Checks if a name has already been recorded in the cookies.
 // The code allows for a person to enter their name only once
@@ -45,20 +58,27 @@ function setName() {
 
 }
 
-
 // adds a task when the user press the add button
 function addTask() {
+    const taskList = document.getElementById("taskList");
+    const listItem = document.createElement("li");
     const taskText = document.getElementById("input").value.trim();
     if (taskText === "") {
         alert("Task cannot be empty");
         return;
     }
-    const listItem = document.createElement("li");
-    const taskList = document.getElementById("taskList");
-
+    if (startsWithNumber(taskText)) {
+        alert("Tasks cannot begin with numbers");
+        return;
+    }
     listItem.className = "item";
+    listItem.id = taskText;
     listItem.innerHTML = `<span>${taskText}</span> <button class="delete-btn" onclick="deleteTask(this)">Delete</button> <button class="tick-btn" onclick="markAsDone(this)">Completed</button>`;
-
+    if (taskList.querySelector(`#${taskText}`) != null) {
+        document.getElementById('input').value = '';
+        alert('Duplicate tasks are not allowed');
+        return;
+    }
     taskList.appendChild(listItem);
     document.getElementById('input').value = '';
 }
@@ -67,6 +87,13 @@ function addTask() {
 function deleteTask(button) {
     const taskList = document.getElementById("taskList");
     const listItem = button.parentElement;
+    const buttonIndex = completedTask.findIndex((element) => element == listItem);
+    if (buttonIndex != -1) {
+        completedTask.splice(buttonIndex, 1);
+        document.getElementById('completedTaskCounter').textContent = `Completed Tasks: ${completedTask.length}`
+        taskList.removeChild(listItem);
+        return;
+    }
     taskList.removeChild(listItem);
 }
 
@@ -74,4 +101,18 @@ function deleteTask(button) {
 function markAsDone(button) {
     const listItem = button.parentElement;
     listItem.classList.toggle("task-done");
+    button.disabled = true;
+    button.classList.toggle("btn-disable");
+    document.getElementById('completedTaskCounter').textContent = `Completed Tasks: ${completedTask.push(listItem)}`
+}
+
+function clearCompletedTasks() {
+    var taskList = document.getElementById("taskList");
+    function clearList(element) {
+        taskList.removeChild(element);
+    }
+    completedTask.forEach(clearList);
+    completedTask = [];
+    document.getElementById('completedTaskCounter').textContent = `Completed Tasks: ${completedTask.length}`
+
 }
