@@ -46,14 +46,20 @@ function goToNextPage() {
 
 
 // takes the name from cookies and changes the title accordingly
-function setName() {
+function load() {
     localStorage.setItem("placeholder", `${titleCase("an unnamed guy")}`);
     let usrName = localStorage.getItem('name');
+    let list = localStorage.getItem('list');
     let placeholder = localStorage.getItem('placeholder');
     if (usrName !== null) {
         document.getElementById('mTitle').textContent = `To-Do List for ${usrName}`;
     } else {
         document.getElementById('mTitle').textContent = `To-Do List for ${placeholder}`
+    }
+
+    if (list !== null) {
+        document.getElementById("taskList").innerHTML = list;
+        return;
     }
 
 }
@@ -80,6 +86,7 @@ function addTask() {
         return;
     }
     taskList.appendChild(listItem);
+    localStorage.setItem("list", taskList.innerHTML);
     document.getElementById('input').value = '';
 }
 
