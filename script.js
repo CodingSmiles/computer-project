@@ -18,7 +18,7 @@ function titleCase(str) {
 // "abc" = false
 function startsWithNumber(str) {
     return /^\d/.test(str);
-  }
+}
 
 
 // Checks if a name has already been recorded in the cookies.
@@ -102,6 +102,7 @@ function deleteTask(button) {
         return;
     }
     taskList.removeChild(listItem);
+    localStorage.setItem("list", taskList.innerHTML);
 }
 
 // marks a task as completed
@@ -110,7 +111,8 @@ function markAsDone(button) {
     listItem.classList.toggle("task-done");
     button.disabled = true;
     button.classList.toggle("btn-disable");
-    document.getElementById('completedTaskCounter').textContent = `Completed Tasks: ${completedTask.push(listItem)}`
+    document.getElementById('completedTaskCounter').textContent = `Completed Tasks: ${completedTask.push(listItem)}`;
+    localStorage.setItem("list", taskList.innerHTML);
 }
 
 function clearCompletedTasks() {
@@ -121,5 +123,5 @@ function clearCompletedTasks() {
     completedTask.forEach(clearList);
     completedTask = [];
     document.getElementById('completedTaskCounter').textContent = `Completed Tasks: ${completedTask.length}`
-
+    localStorage.setItem("list", taskList.innerHTML);
 }
