@@ -21,6 +21,13 @@ function startsWithNumber(str) {
 }
 
 
+// this function removes spaces and capital letters from strings
+function removeCharacters(str) {
+    let output = str.replace(/\s+/g, '');
+    return output;
+}
+
+
 // Checks if a name has already been recorded in the cookies.
 // The code allows for a person to enter their name only once
 // The code allows for a person to leave the input blank
@@ -52,9 +59,9 @@ function load() {
     let list = localStorage.getItem('list');
     let placeholder = localStorage.getItem('placeholder');
     if (usrName !== null) {
-        document.getElementById('mTitle').textContent = `To-Do List for ${usrName}`;
+        document.getElementById('title').textContent = `To-Do List for ${usrName}`;
     } else {
-        document.getElementById('mTitle').textContent = `To-Do List for ${placeholder}`
+        document.getElementById('title').textContent = `To-Do List for ${placeholder}`
     }
 
     if (list !== null) {
@@ -78,9 +85,9 @@ function addTask() {
         return;
     }
     listItem.className = "item";
-    listItem.id = taskText;
+    listItem.id = removeCharacters(taskText);
     listItem.innerHTML = `<span>${taskText}</span> <button class="delete-btn" onclick="deleteTask(this)">Delete</button> <button class="tick-btn" onclick="markAsDone(this)">Completed</button>`;
-    if (taskList.querySelector(`#${taskText}`) != null) {
+    if (taskList.querySelector(`#${removeCharacters(taskText)}`) != null) {
         document.getElementById('input').value = '';
         alert('Duplicate tasks are not allowed');
         return;
