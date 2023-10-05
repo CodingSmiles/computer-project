@@ -1,17 +1,19 @@
 <!DOCTYPE html>
+<!-- Written by Aadiraj Anil -->
+<!-- https://theconquest.substack.com/ -->
 <html lang="en">
 
 <head>
-  <link rel="shortcut icon" type="image/x-icon" href="favicon.png">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script src="script.js" type="text/javascript"></script>
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.png">
   <link rel="stylesheet" href="style.css" type="text/css">
   <link rel="stylesheet" href="fonts.css" type="text/css">
+  <script src="script.js" type="text/javascript"></script>
   <title>To-Do List</title>
 </head>
 
-<body onload="checkName()" id="1">
+<body onload="checkName()">
   <div class="container">
     <h1 class="title">Enter Your Name</h1>
     <input type="text" id="name" class="name" placeholder="Your name">
@@ -19,10 +21,6 @@
       <button onclick="goToNextPage()" id="proceed">Proceed</button>
     </a>
   </div>
-
-  <center>
-  </center>
-
 
   <script>
     // This code is local to this page

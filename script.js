@@ -84,14 +84,14 @@ function addTask() {
         alert("Tasks cannot begin with numbers");
         return;
     }
-    listItem.className = "item";
-    listItem.id = removeCharacters(taskText);
-    listItem.innerHTML = `<span>${taskText}</span> <button class="delete-btn" onclick="deleteTask(this)">Delete</button> <button class="tick-btn" onclick="markAsDone(this)">Completed</button>`;
     if (taskList.querySelector(`#${removeCharacters(taskText)}`) != null) {
         document.getElementById('input').value = '';
         alert('Duplicate tasks are not allowed');
         return;
     }
+    listItem.className = "item";
+    listItem.id = removeCharacters(taskText);
+    listItem.innerHTML = `<span>${taskText}</span> <button class="delete-btn" onclick="deleteTask(this)">Delete</button> <button class="tick-btn" onclick="markAsDone(this)">Completed</button>`;
     taskList.appendChild(listItem);
     localStorage.setItem("list", taskList.innerHTML);
     document.getElementById('input').value = '';
