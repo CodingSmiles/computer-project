@@ -2,7 +2,7 @@
 
 # Custom To-Do List
 
-A simple to use, non error-prone to-do list by **Aadiraj Anil**. Works great, has all the features you'd need, easy to figure out and convenient on Desktop.
+A simple-to-use, non-error-prone to-do list by **Aadiraj Anil**. Works great, has all the features you'd need, is easy to figure out and is convenient on Desktop.
 
 
 ## Features
@@ -27,11 +27,11 @@ A simple to use, non error-prone to-do list by **Aadiraj Anil**. Works great, ha
 ## Other Stuff
 
  - [My Website](https://theconquest.substack.com/)
- - [SpaceBird Aerospace (My Project)](https://www.youtube.com/@SpaceBirdAerospace)
+ - [SpaceBird Aerospace](https://www.youtube.com/@SpaceBirdAerospace)
  - [My NASA SpaceApps Team](https://www.spaceappschallenge.org/2023/find-a-team/spacebird-aerospace/)
 
 ## Authors's notes
-For anyone that stumbles upon this (highly unlikely), I made this as a school project.
+For anyone who stumbles upon this (highly unlikely), I made this as a school project.
 I'm currently 13 in 2023 and this was one project I had to make for the CS. I went a bit over the expectations mostly because I'm an avid programmer and app-dev guy. I think it paid off because the website is really not too bad in my opinion. If anyone has any suggestions or things that I could improve, please create an issue. I'm active here so I won't ignore it. Thanks!
 
 ## Authors
