@@ -27,8 +27,7 @@ A simple-to-use, non-error-prone to-do list by **Aadiraj Anil**. Works great, ha
 ## Other Stuff
 
  - [My Website](https://theconquest.substack.com/)
- - [SpaceBird Aerospace](https://www.youtube.com/@SpaceBirdAerospace)
- - [My NASA SpaceApps Team](https://www.spaceappschallenge.org/2023/find-a-team/spacebird-aerospace/)
+
 
 ## Authors's notes
 For anyone who stumbles upon this (highly unlikely), I made this as a school project.
